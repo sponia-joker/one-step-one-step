@@ -1,0 +1,9 @@
+{
+  "name": "one-step-one-step",
+  "version": "1.0.0",
+  "description": "one-step-one-step",
+  "main": "index.js",
+  "repository": "https://github.com/sponia-joker/one-step-one-step",
+  "author": "joker",
+  "license": "MIT"
+}
