@@ -1,5 +1,6 @@
 import React from 'react'
-// import './Button.scss'
+import PropTypes from 'prop-types'
+import './Button.scss'
 
 const Button = ({ style, value }) => (
   <button
@@ -9,5 +10,9 @@ const Button = ({ style, value }) => (
     {value}
   </button>
 )
+
+Button.propTypes = {
+  value:PropTypes.string.isRequired
+}
 
 export default Button

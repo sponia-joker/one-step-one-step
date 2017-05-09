@@ -1,7 +1,12 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import project from '../project.config'
+const extractSass = new ExtractTextPlugin({
+    filename: "style.css",
+    disable: process.env.NODE_ENV === "development"
+});
 export default {
     context: project.base,
     entry: [
@@ -15,7 +20,27 @@ export default {
     },
     module: {
         rules: [
-            { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ }
+            { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+            {
+                test: /\.(css|scss)$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function() {
+                                return [
+                                    require('autoprefixer')({ browsers: 'last 2 versions' })
+                                ];
+                            }
+                        }
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    fallback: "style-loader"
+                })
+            }
         ]
     },
     devtool: 'inline-source-map',
@@ -40,5 +65,6 @@ export default {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        extractSass,
     ],
 }
