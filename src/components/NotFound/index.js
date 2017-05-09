@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const NotFound = ()=> (
+const NotFound = () => (
   <div className="not-found">
     <h1>404</h1>
   </div>
