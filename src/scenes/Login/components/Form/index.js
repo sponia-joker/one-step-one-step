@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 const Form = ()=> (
   <div className="login-form">
     <form action="#">
-      <label for="username">用户名</label>
+      <label htmlFor="username">用户名</label>
       <input type="text" name="username" id='username' />
-      <label for="password">密码</label>
+      <label htmlFor="password">密码</label>
       <input type="password" name="password" id='password'/>
-      <button value='LogIn'/>
+      <button>Login</button>
     </form> 
   </div>
 )

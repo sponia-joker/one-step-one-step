@@ -1,13 +1,14 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import project from '../project.config'
 export default {
-    context: path.resolve(__dirname, '..'),
+    context: project.base,
     entry: './src',
     output: {
-        path: path.resolve(__dirname, '..', 'dist'),
+        path: project.dist,
         filename: '[name]-[hash].js',
-        publicPath: `http://localhost:3001/`,
+        publicPath: `http://localhost:${project.wds_port}/dist`,
     },
     module: {
         rules: [
@@ -20,8 +21,14 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            inject: true,
-            template: path.resolve(__dirname, '../public/index.html'),
+            template : path.resolve(__dirname, '../index.html'),
+            hash     : false,
+            favicon  : path.resolve(__dirname, '../public/favicon.ico'),
+            filename : 'index.html',
+            inject   : 'body',
+            minify   : {
+              collapseWhitespace : true
+            }
         }),
     ],
 }

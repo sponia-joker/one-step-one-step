@@ -7,8 +7,18 @@
     "author": "joker",
     "license": "MIT",
     "scripts": {
-        "start": "babel-node webpack/webpack-dev-server",
-        "test": "eslint src"
+        "start": "better-npm-run start",
+        "test": "eslint src",
+        "build:prod": "webpack --config webpack/dev.config.babel.js --progress --profile --colors"
+    },
+    "betterScripts": {
+        "start": {
+            "command": "babel-node scripts/devServer",
+            "env": {
+                "DEBUG": "app:*",
+                "NODE_ENV": "development"
+            }
+        }
     },
     "devDependencies": {
         "babel-cli": "^6.24.1",
@@ -32,6 +42,9 @@
         "webpack-hot-middleware": "^2.18.0"
     },
     "dependencies": {
+        "better-npm-run": "^0.0.15",
+        "compression": "^1.6.2",
+        "debug": "^2.6.6",
         "express": "^4.15.2",
         "prop-types": "^15.5.8",
         "react": "^15.5.4",

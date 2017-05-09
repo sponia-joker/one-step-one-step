@@ -1,23 +1,34 @@
-import Express from 'express'
+import express from 'express'
+import path from 'path'
 import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-// import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackDevConfig from './dev.config'
+import project from '../project.config'
+import compress from 'compression'
+import webpackDevConfig from './dev.config.babel'
+const debug = require('debug')('app:webpack:server')
 const compiler = webpack(webpackDevConfig)
-const serverOptions = {
+const app = new express()
+app.use(compress())
+
+debug('Enabling webpack dev and HMR middleware')
+
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
     publicPath: webpackDevConfig.output.publicPath,
     headers: { 'Access-Control-Allow-Origin': '*' },
     stats: { colors: true }
-}
-const app = new Express();
+}));
+app.use(express.static(project.public))
 
-app.use(webpackDevMiddleware(compiler, serverOptions));
-// app.use(webpackHotMiddleware(compiler));
+app.use('*', function(req, res, next) {
+    const filename = path.join(compiler.outputPath, 'index.html')
+    compiler.outputFileSystem.readFile(filename, (err, result) => {
+        if (err) {
+            return next(err)
+        }
+        res.set('content-type', 'text/html')
+        res.send(result)
+        res.end()
+    })
+})
 
-app.listen(3001, (err) => {
-    if (err) {
-        console.error(err);
-    } else {
-        console.info('==> 🚧  Webpack development server listening on port %s', 3001);
-    }
-});
+export default app
