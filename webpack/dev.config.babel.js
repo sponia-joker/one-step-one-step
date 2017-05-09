@@ -21,6 +21,10 @@ export default {
     devtool: 'inline-source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
+        modules: [
+            project.node_modules,
+            project.src,
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({

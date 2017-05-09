@@ -7,7 +7,8 @@ const projectConfig = {
     server_host: 'localhost',
     src: path.resolve(__dirname, 'src'),
     public: path.resolve(__dirname, 'public'),
-    dist:path.resolve(__dirname,'dist'),
+    dist: path.resolve(__dirname, 'dist'),
+    node_modules: path.resolve(__dirname, 'node_modules'),
     base: path.resolve(__dirname),
     isProd: process.env.NODE_ENV === 'production',
 }
