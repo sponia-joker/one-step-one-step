@@ -13,10 +13,13 @@ debug('Enabling webpack dev and HMR middleware')
 
 app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
+    hot: true,
+    inline: true,
     publicPath: webpackDevConfig.output.publicPath,
     headers: { 'Access-Control-Allow-Origin': '*' },
     stats: { colors: true }
-}));
+}))
+app.use(require("webpack-hot-middleware")(compiler));
 app.use(express.static(project.public))
 
 app.use('*', function(req, res, next) {
