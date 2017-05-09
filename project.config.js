@@ -11,6 +11,7 @@ const projectConfig = {
     node_modules: path.resolve(__dirname, 'node_modules'),
     base: path.resolve(__dirname),
     isProd: process.env.NODE_ENV === 'production',
+    app_name:'快体育',
 }
 
 export default projectConfig
