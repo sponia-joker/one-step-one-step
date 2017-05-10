@@ -3,10 +3,10 @@ import { Switch } from 'react-router'
 import { Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import project from '../project.config'
-import Home from 'scenes/Home'
-import NotFound from 'components/NotFound'
-import Nav from 'components/Nav'
-import 'style.scss'
+import Home from './scenes/Home'
+import NotFound from './components/NotFound'
+import Nav from './components/Nav'
+import './style.scss'
 
 class App extends Component {
     render() {

@@ -1,4 +1,5 @@
 .DS_Store
+webpack-assets.json
 /*.log
 dist/
 node_modules/

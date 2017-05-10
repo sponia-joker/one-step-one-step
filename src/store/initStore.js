@@ -17,7 +17,7 @@ export default (initialState = {}) => {
 
     let composeEnhancers = compose
 
-    if (__DEVELOPMENT__) {
+    if (__DEVELOPMENT__&&__CLIENT__) {
         const composeWithDevToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
         if (typeof composeWithDevToolsExtension === 'function') {
             composeEnhancers = composeWithDevToolsExtension
