@@ -19,29 +19,36 @@ export default {
         publicPath: `http://localhost:${project.wds_port}/dist`,
     },
     module: {
-        rules: [
-            { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
-            {
-                test: /\.(css|scss)$/,
-                use: extractSass.extract({
-                    use: [{
-                        loader: "css-loader"
-                    }, {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: function() {
-                                return [
-                                    require('autoprefixer')({ browsers: 'last 2 versions' })
-                                ];
-                            }
+        rules: [{
+            test: /\.(js|jsx)$/,
+            use: {
+                loader: 'babel-loader',
+            },
+            exclude: /node_modules/
+        }, {
+            test: /\.(css|scss)$/,
+            use: extractSass.extract({
+                use: [{
+                    loader: "css-loader"
+                }, {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: function() {
+                            return [
+                                require('autoprefixer')({ browsers: 'last 2 versions' })
+                            ];
                         }
-                    }, {
-                        loader: "sass-loader"
-                    }],
-                    fallback: "style-loader"
-                })
-            }
-        ]
+                    }
+                }, {
+                    loader: "sass-loader"
+                }],
+                fallback: "style-loader"
+            })
+        }, {
+            test: /\.(png|jpg)$/,
+            use: 'url-loader?limit=10240',
+            exclude: /node_modules/
+        }]
     },
     devtool: 'inline-source-map',
     resolve: {

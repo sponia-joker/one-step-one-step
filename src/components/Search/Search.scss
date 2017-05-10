@@ -1,0 +1,33 @@
+.search-form {
+    position: relative;
+    display: inline-block;
+    width: 342px;
+    height: 45px;
+    .search-form-input {
+        font-size: 14px;
+        font-weight: 300;
+        width: 342px;
+        height: 45px;
+        padding-left: 20px;
+        color: rgba(255, 255, 255, .50);
+        border: 0;
+        outline: 0;
+    }
+    .search-form-submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border: 0;
+        outline: 0;
+        input {
+            width: 23px;
+            height: 23px;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            background-image: url('./images/navbar-search@2x.png');
+            background-size: cover;
+        }
+    }
+}

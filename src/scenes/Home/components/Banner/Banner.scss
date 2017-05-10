@@ -1,0 +1,24 @@
+.home-banner-middle {
+    height: 500px;
+    text-align: center;
+    background-image: linear-gradient(-180deg, #2a4bac, #5a77c9);
+    overflow: hidden;
+    .home-banner-title {
+        margin-top: 150px;
+        text-align: center;
+        h1 {
+            font-size: 48px;
+            letter-spacing: 8px;
+            color: #fff;
+        }
+    }
+}
+
+.home-banner-bottom {
+    width: 100%;
+    height: 130px;
+    background-image: url('./images/home-bg@2x.png');
+    background-repeat: no-repeat;
+    background-position: 50% top;
+    background-size: auto 130px;
+}
