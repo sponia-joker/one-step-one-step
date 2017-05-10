@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore, compose } from 'redux'
-import thunk from '../middleware/thunk'
+import thunk from './middleware/thunk'
 import promiseMiddleware from 'redux-promise-middleware'
 import request from '../tools/request'
 import reducers from './reducers'
