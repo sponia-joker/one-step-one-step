@@ -27,6 +27,6 @@ if (module.hot) {
     module.hot.accept('./App', () => {
         // eslint-disable-next-line global-require
         const NextApp = require('./App').default
-        ReactDOM.render(<NextApp />, document.getElementById('root'))
+        ReactDOM.render(wrapApp(NextApp,store), document.getElementById('root'))
     })
 }

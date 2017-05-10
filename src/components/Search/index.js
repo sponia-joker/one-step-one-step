@@ -35,7 +35,7 @@ class Search extends Component {
               value={this.state.value}
               onChange={this.handleChnage}
               type='text'
-              placeholder=''
+              placeholder='搜索人名、公司'
               className='search-form-input'
               onKeyUp={this.onKeyUp}
                 />
