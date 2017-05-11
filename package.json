@@ -25,6 +25,7 @@
         "start:server": {
             "command": "babel-node bin/server",
             "env": {
+                "NODE_PATH": "./src",
                 "DEBUG": "app:*",
                 "NODE_ENV": "development"
             }
