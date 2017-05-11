@@ -1,7 +1,7 @@
 /* eslint key-spacing:0 spaced-comment:0 */
 const path = require('path')
 
-const projectConfig = {
+const project = {
     web_port: process.env.WEB_PORT || 3000,
     wds_port: process.env.WDS_PORT || 3001,
     server_host: 'localhost',
@@ -15,4 +15,4 @@ const projectConfig = {
     static_path: '/static'
 }
 
-export default projectConfig
+export default project

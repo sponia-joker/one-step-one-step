@@ -9,11 +9,10 @@ debug('start server render')
 const app = express()
 app.use(compression())
 
-app.use(project.static_path, express.static('dist'))
-app.use(project.static_path, express.static('public'))
+app.use(express.static(project.public))
 
 app.get('/', (req, res) => {
-    res.send(renderApp('/', ))
+    res.send(renderApp('/'))
 })
 
 app.get('*', (req, res) => {
@@ -28,7 +27,6 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(project.web_port, () => {
-    // eslint-disable-next-line no-console
     debug(`Server running on port ${project.web_port} ${project.isProd ? '(production)' :
     '(development)'}.`)
 })
