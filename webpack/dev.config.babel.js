@@ -6,8 +6,9 @@ var webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 var webpackIsomorphicToolsPlugin = new webpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools')).development()
 import project from '../project.config'
 const extractSass = new ExtractTextPlugin({
-    filename: "style.css"
-});
+    filename: "style.css",
+    disable: process.env.NODE_ENV === "development"
+})
 export default {
     context: project.base,
     entry: [
