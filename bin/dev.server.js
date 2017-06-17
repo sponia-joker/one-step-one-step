@@ -1,9 +1,9 @@
-import express from 'express'
-import path from 'path'
-import webpack from 'webpack'
-import compress from 'compression'
-import webpackDevConfig from '../webpack/webpack.dev.config.babel'
-import projectConfig from '../project.config'
+const express = require('express')
+const path = require('path')
+const webpack = require('webpack')
+const compress = require('compression')
+const webpackDevConfig  = require ('../webpack/webpack.dev.config.babel')
+const projectConfig = require ('../project.config')
 const wdsPort = projectConfig.wdsPort
 const debug = require('debug')('app:bin:dev:server')
 const compiler = webpack(webpackDevConfig)
@@ -24,12 +24,10 @@ app.use(require("webpack-hot-middleware")(compiler));
 app.use(express.static(projectConfig.public))
 
 
-app.listen(wdsPort, (err) => {
-    if (err) {
-        console.error(err);
-    } else {
-        debug('==> 🚧  Webpack development server listening on port %s', wdsPort);
-    }
-})
-
-debug(`Server is now running at http://localhost:${wdsPort}.`)
+app.listen(wdsPort, function onAppListening(err) {
+  if (err) {
+    console.error(err);
+  } else {
+   debug('==> 🚧  Webpack development server listening on port %s', wdsPort);
+  }
+});

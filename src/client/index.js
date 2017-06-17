@@ -4,15 +4,18 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import initStore from '../common/store/initStore'
+import { AppContainer } from "react-hot-loader"
 
 import App from '../common/App'
 
 const store = initStore()
 
-const wrapApp = (AppComponent, reduxStore) =>
+const wrapApp = (App, reduxStore) =>
     <Provider store={reduxStore}>
       <BrowserRouter>
-          <AppComponent />
+          <AppContainer>
+            <App/>
+          </AppContainer>
       </BrowserRouter>
   </Provider>
 

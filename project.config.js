@@ -1,7 +1,7 @@
 /* eslint key-spacing:0 spaced-comment:0 */
 const path = require('path')
 
-const project = {
+module.exports =  {
     webPort: process.env.WEB_PORT || 3000,
     wdsPort: process.env.WDS_PORT || 3001,
     host: 'localhost',
@@ -14,5 +14,3 @@ const project = {
     appName: '快体育',
     staticPath: '/static'
 }
-
-export default project

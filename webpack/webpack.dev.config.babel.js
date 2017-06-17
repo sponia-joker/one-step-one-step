@@ -1,7 +1,7 @@
-import path from 'path'
-import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import projectConfig from '../project.config'
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const projectConfig = require('../project.config')
 var webpackIsomorphicToolsPlugin 
 = require('webpack-isomorphic-tools/plugin')
 var webpackIsomorphicToolsPlugin 
@@ -10,16 +10,16 @@ const extractSass = new ExtractTextPlugin({
     filename: "style.css",
     disable: process.env.NODE_ENV === "development"
 })
-console.log(projectConfig.base)
-export default {
+module.exports = {
     context: projectConfig.base,
     entry: [
+        "react-hot-loader/patch",
         `webpack-hot-middleware/client?path=http://localhost:${projectConfig.wdsPort}/__webpack_hmr`,
-        'client'
+        './src/client'
     ],
     output: {
         path: projectConfig.dist,
-        filename: '[name]-[hash].js',
+        filename: '[name][hash].js',
         publicPath: `http://localhost:${projectConfig.wdsPort}/dist/`,
     },
     module: {
