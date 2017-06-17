@@ -1,12 +1,11 @@
 import 'babel-polyfill'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import initStore from './store/initStore'
+import initStore from '../common/store/initStore'
 
-import App from './App'
+import App from '../common/App'
 
 const store = initStore()
 
@@ -24,9 +23,9 @@ ReactDOM.render(
 )
 if (module.hot) {
     // flow-disable-next-line
-    module.hot.accept('./App', () => {
+    module.hot.accept('../common/App', () => {
         // eslint-disable-next-line global-require
-        const NextApp = require('./App').default
+        const NextApp = require('../common/App').default
         ReactDOM.render(wrapApp(NextApp,store), document.getElementById('root'))
     })
 }

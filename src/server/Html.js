@@ -43,7 +43,7 @@ class Html extends Component {
               <html lang="en-us">
               <head>
                 <meta charSet="utf-8"/>
-                <title>universal app</title>
+                <title>快体育</title>
 
                 {/* favicon */}
                 {/*<link rel="shortcut icon" href={icon} />*/}

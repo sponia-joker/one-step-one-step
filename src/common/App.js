@@ -2,22 +2,20 @@ import React, { Component } from 'react'
 import { Switch } from 'react-router'
 import { Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
-import project from '../project.config'
+import projectConfig from '../../project.config'
+const appName = projectConfig.appName
 import Home from './scenes/Home'
-import NotFound from './components/NotFound'
-import Nav from './components/Nav'
-import './style.scss'
+import './styles/core.scss'
 
 class App extends Component {
     render() {
         return (
           <div className="app">
-            <Helmet titleTemplate={`%s | ${project.app_name}`} defaultTitle={project.app_name} />
+            <Helmet titleTemplate={`%s | ${appName}`} defaultTitle={appName} />
             {/*<Nav />*/}
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route path="/home" render={() => <Home />} />
-              <Route component={NotFound} />
             </Switch>
         </div>
         )

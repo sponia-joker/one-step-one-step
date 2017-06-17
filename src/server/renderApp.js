@@ -3,9 +3,9 @@ import ReactDOMServer from 'react-dom/server'
 import Helmet from 'react-helmet'
 import { Provider } from 'react-redux'
 import { StaticRouter } from 'react-router'
-import initStore from '../store/initStore'
+import initStore from '../common/store/initStore'
 import Html from './Html'
-import App from '../App'
+import App from '../common/App'
 
 
 const renderFullPage = (appComponent, store) => {
