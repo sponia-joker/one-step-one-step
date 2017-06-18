@@ -8,7 +8,7 @@ import { AppContainer } from "react-hot-loader"
 
 import App from '../common/App'
 
-const store = initStore()
+const store = initStore(window.__PRELOADED_STATE__)
 
 const wrapApp = (App, reduxStore) =>
     <Provider store={reduxStore}>

@@ -29,9 +29,9 @@ class Company extends Component {
     company:PropTypes.object
   }
   componentDidMount () {
-    const {match} = this.props 
-    const { params:{ company_id } } = match
-    this.props.getCompany(company_id)
+    // const {match} = this.props 
+    // const { params:{ company_id } } = match
+    // this.props.getCompany(company_id)
   }
   render () {
     const { company } = this.props
@@ -129,7 +129,6 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
   company:state.company.data
-
 })
 
 export default connect(
