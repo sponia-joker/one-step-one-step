@@ -1,0 +1,195 @@
+.list-main {
+    .number {
+        font-size: 14px;
+        width: 1180px;
+        height: 50px;
+        padding: 15px 20px 0;
+        text-align: left;
+        color: #999;
+    }
+    .list-main-header {
+        position: relative;
+        height: 50px;
+        list-style: none;
+        text-align: center;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+        li {
+            line-height: 50px;
+            display: inline-block;
+            width: 170px;
+        }
+        li:nth-child(1) {
+            width: 500px;
+            padding-left: 139px;
+            text-align: left;
+        }
+    }
+    .list-main-header-stadium {
+        text-align: left;
+        position: relative;
+        height: 50px;
+        list-style: none;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+        li {
+            line-height: 50px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        li:nth-child(1) {
+            width: 700px;
+            padding-left: 139px;
+            text-align: left;
+        }
+    }
+    .list-entry {
+        font-size: 14px;
+        text-align: left;
+        color: #999;
+        background-color: #fff;
+        .people-item {
+            height: 110px;
+            padding: 20px 0 30px 30px;
+            .people-logo {
+                display: inline-block;
+                width: 280px;
+                text-align: left;
+                vertical-align: top;
+                .people-img-link {
+                    display: inline-block;
+                    float: left;
+                    overflow: hidden;
+                }
+                img {
+                    vertical-align: top;
+                    border-radius: 100px;
+                }
+                p {
+                    display: block;
+                    overflow: hidden;
+                    width: 200px;
+                    margin: 0;
+                    margin: 6px 80px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .people-name {
+                    a {
+                        font-size: 18px;
+                        color: #000;
+                        &:hover {
+                            color: #5a76cd;
+                        }
+                    }
+                }
+                .people-address {
+                    font-size: 14px;
+                    color: #999;
+                }
+            }
+            .people-description {
+                font-size: 14px;
+                line-height: 28px;
+                display: inline-block;
+                width: 870px;
+                vertical-align: top;
+                color: #999;
+            }
+        }
+        li {
+            border-bottom: 1px solid #e4e9ea;
+        }
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            width: 500px;
+            padding: 30px;
+            padding-right: 0;
+            text-align: left;
+            vertical-align: middle;
+            .logo {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .logo-text {
+                position: relative;
+                display: inline-block;
+                width: 360px;
+                height: 80px;
+                padding-left: 33px;
+                vertical-align: middle;
+                .company-link {
+                    font-size: 18px;
+                    position: absolute;
+                    top: 5px;
+                    left: 30px;
+                    color: #000;
+                    &:hover {
+                        color: #5a76cd;
+                    }
+                }
+                p {
+                    line-height: 23px;
+                    position: absolute;
+                    top: 20px;
+                    left: 30px;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 41px;
+                    color: #999;
+                }
+            }
+             .logo-text-stadium{
+                width: 550px;
+            }
+        }
+        .logo-container-stadium {
+            width: 700px;
+        }
+        span {
+            position: relative;
+            display: inline-block;
+            width: 170px;
+            text-align: center;
+            vertical-align: middle;
+            label {
+                display: block;
+                padding: 3px;
+            }
+            a {
+                display: inline-block;
+                img {
+                    vertical-align: top;
+                    border: 1px solid #e4e9ea;
+                    border-radius: 8px;
+                }
+            }
+            .company-link {
+                font-size: 18px;
+                position: absolute;
+                top: 35px;
+                left: 140px;
+                color: #000;
+                &:hover {
+                    color: #5a76cd;
+                }
+            }
+            p {
+                line-height: 23px;
+                position: absolute;
+                top: 50px;
+                left: 140px;
+                overflow: hidden;
+                width: 349px;
+                height: 41px;
+                color: #999;
+            }
+        }
+        .stadium-span {
+            width: 230px
+        }
+    }
+}

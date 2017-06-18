@@ -1,0 +1,25 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 187, 0.20);
+    padding-bottom: 30px;
+}
+
+.card-header {
+    font-size: 16px;
+    position: relative;
+    padding: 14px 20px;
+    text-align: left;
+    color: #333;
+    border-bottom: 1px solid #e4e9ea;
+    label {
+        font-size: 12px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: inline-block;
+        padding: 5px 12px;
+        color: #fff;
+        border-radius: 4px;
+        background: #84a4e8;
+    }
+}

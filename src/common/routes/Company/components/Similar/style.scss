@@ -1,0 +1,29 @@
+.company-similar {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+    .company-similar-list {
+        padding-bottom: 10px;
+        .similar-list-item {
+            padding: 20px 20px 30px;
+            padding-bottom: 0;
+            .similar-logo {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .similar-name {
+                display: inline-block;
+                overflow: hidden;
+                max-width: 190px;
+                padding-left: 20px;
+                vertical-align: middle;
+                a {
+                    font-size: 16px;
+                    color: #333;
+                    &:hover {
+                        color: #5a76cd;
+                    }
+                }
+            }
+        }
+    }
+}

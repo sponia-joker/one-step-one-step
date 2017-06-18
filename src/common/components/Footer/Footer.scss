@@ -1,0 +1,30 @@
+.footer {
+    text-align: center;
+    background-color: #f2f3f6;
+    ul {
+        position: relative;
+        display: inline-block;
+        width: 1180px;
+        height: 74px;
+        text-align: left;
+        border-top: 1px solid #d6dcdd;
+        li {
+            line-height: 74px;
+            display: inline-block;
+            padding-right: 63px;
+            a {
+                font-size: 14px;
+                color: #999;
+            }
+            span {
+                font-size: 14px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 310px;
+                text-align: right;
+                color: #999;
+            }
+        }
+    }
+}

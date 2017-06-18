@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import searchReducer from '../data/search/reducer'
-
-
+import homeReducer from 'common/routes/Home'
+import companyReducer from 'common/routes/Company'
 const appReducer = combineReducers({
-    search: searchReducer,
+    home: homeReducer,
+    company:companyReducer,
 });
 
 export default appReducer

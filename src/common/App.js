@@ -4,7 +4,8 @@ import { Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import projectConfig from '../../project.config'
 const appName = projectConfig.appName
-import Home from './scenes/Home'
+import {Home} from './routes/Home'
+import {Company} from './routes/Company'
 import './styles/core.scss'
 
 class App extends Component {
@@ -12,10 +13,9 @@ class App extends Component {
         return (
           <div className="app">
             <Helmet titleTemplate={`%s | ${appName}`} defaultTitle={appName} />
-            {/*<Nav />*/}
             <Switch>
-              <Route exact path="/" render={() => <Home />} />
-              <Route path="/home" render={() => <Home />} />
+              <Route exact path="/" component={Home} />
+              <Route path="/company/:company_id" component={Company} />
             </Switch>
         </div>
         )

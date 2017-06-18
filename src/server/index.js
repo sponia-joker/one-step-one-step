@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
     res.send(renderApp('/'))
 })
 
+app.get('/company/:company_id', (req, res) => {
+    const {company_id} = req.params
+    res.send(renderApp(`/company/${company_id}`))
+})
+
 app.get('*', (req, res) => {
     res.status(404).send(renderApp(req.url))
 })

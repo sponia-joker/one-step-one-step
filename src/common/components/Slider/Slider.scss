@@ -1,0 +1,42 @@
+.slider-image {
+    padding: 20px;
+    padding-top: 30px;
+    position: relative;
+    .slider-pre {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background-image: url('~assets/btn-left-normal@2x.png');
+        background-size: cover;
+        &:hover {
+            background-image: url('~assets/btn-left-hover-click@2x.png');
+        }
+    }
+    .slider-next {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background-image: url('~assets/btn-right-normal@2x.png');
+        background-size: cover;
+        &:hover {
+            background-image: url('~assets/btn-right-hover-click@2x.png');
+        }
+    }
+}
+
+.slider-thumbnails {
+    .slider-thumbnails-item {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        img {
+            vertical-align: top;
+        }
+    }
+}

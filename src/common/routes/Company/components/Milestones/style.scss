@@ -1,0 +1,48 @@
+.company-milestones {
+    margin-top: 20px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+    .company-milestones-list {
+        padding: 20px 0;
+        .company-milestones-list-item {
+            position: relative;
+            padding: 0 20px;
+            .company-milestones-date {
+                font-size: 12px;
+                display: inline-block;
+                vertical-align: top;
+                color: #999;
+                margin-right: 20px;
+                padding: 10px 0px;
+                line-height: 20px;
+            }
+            .company-milestones-border {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                display: inline-block;
+                width: 1px;
+                background-color: #9fb3f4;
+                img {
+                    position: absolute;
+                    left: -7px;
+                    top: 12px;
+                }
+            }
+            .company-milestones-content {
+                font-size: 14px;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 20px;
+                padding: 10px 0px;
+                width: 700px;
+                color: #333;
+                margin-left: 20px;
+                word-wrap: break-word;
+                word-break: normal;
+                line-height: 20px;
+            }
+        }
+    }
+}

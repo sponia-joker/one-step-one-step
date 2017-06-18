@@ -1,0 +1,27 @@
+.pagination-container {
+    display: inline-block;
+    padding: 30px 0 40px;
+    span {
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 8px;
+        padding: 7px 12px;
+        cursor: pointer;
+        color: #666;
+        border: 1px solid #e4e9ea;
+        background: #fff;
+        &:hover {
+            color: #5a76cd;
+            border: 1px solid #5a76cd;
+        }
+    }
+    .active {
+        color: #fff;
+        border: 0;
+        background: #5a76cd;
+        &:hover {
+            color: white;
+            border: 0;
+        }
+    }
+}

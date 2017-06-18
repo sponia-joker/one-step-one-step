@@ -1,0 +1,48 @@
+.company-team {
+    .company-team-list {
+        .company-team-list-item {
+            display: inline-block;
+            width: 440px;
+            padding: 20px;
+            padding-bottom: 10px;
+            .item-img {
+                display: inline-block;
+                vertical-align: top;
+                img {
+                    vertical-align: middle;
+                    border-radius: 100px;
+                }
+            }
+            .item-info {
+                display: inline-block;
+                margin-top: 4px;
+                padding-left: 23px;
+                vertical-align: top;
+                span {
+                    a {
+                        font-size: 16px;
+                        color: #333;
+                        &:hover {
+                            color: #5a76cd;
+                        }
+                    }
+                    label {
+                        font-size: 12px;
+                        margin-left: 25px;
+                        color: #5a76cd;
+                    }
+                }
+                p {
+                    font-size: 12px;
+                    line-height: 20px;
+                    overflow: hidden;
+                    width: 300px;
+                    height: 36px;
+                    margin: 0;
+                    margin-top: 8px;
+                    color: #999;
+                }
+            }
+        }
+    }
+}

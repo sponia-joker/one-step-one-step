@@ -1,0 +1,11 @@
+.bread-crumb {
+    padding: 15px 0;
+    a {
+        font-size: 14px;
+        padding-right: 10px;
+        color: #999;
+        &:hover {
+            color: #5a76cd;
+        }
+    }
+}

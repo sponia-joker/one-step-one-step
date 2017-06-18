@@ -1,0 +1,42 @@
+.company-stadiums {
+    .company-stadiums-list-item {
+        display: inline-block;
+        width: 440px;
+        padding: 20px 20px 0;
+        .item-img {
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .item-info {
+            display: inline-block;
+            margin-top: 5px;
+            padding-left: 23px;
+            vertical-align: top;
+            span {
+                font-size: 16px;
+                color: #333;
+                .stadiums-has-link {
+                    font-size: 16px;
+                    color: #333;
+                    &:hover {
+                        color: #5a76cd;
+                    }
+                }
+                .stadiums-type {
+                    font-size: 12px;
+                    margin-left: 15px;
+                    padding: 3px 4px;
+                    color: #5a76cd;
+                    border-radius: 4px;
+                    background: #f3f6ff;
+                }
+            }
+            p {
+                font-size: 12px;
+                line-height: 20px;
+                width: 300px;
+                color: #999;
+            }
+        }
+    }
+}

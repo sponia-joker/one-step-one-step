@@ -1,0 +1,122 @@
+.company-container {
+    height: auto;
+    text-align: center;
+}
+
+.company-profile-contaier {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+}
+
+.company-main-box {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: #f2f3f6;
+    .company-main {
+        display: inline-block;
+        width: 1180px;
+    }
+    .company-main-left {
+        display: inline-block;
+        width: 880px;
+        height: auto;
+        margin-right: 20px;
+        vertical-align: top;
+    }
+    .company-main-right {
+        display: inline-block;
+        width: 280px;
+        height: auto;
+        vertical-align: top;
+    }
+}
+
+.company-basic {
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+    .company-basic-description {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 25px 40px 0px;
+        color: #333;
+    }
+}
+
+.company-product-wrap,
+.company-stadiums-wrap,
+.company-milestones-wrap,
+.company-investments-wrap,
+.company-team-wrap,
+.company-similar-wrap,
+.company-news-wrap{
+    margin-top: 20px;
+    text-align: left;
+}
+
+
+
+.company-contact {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+    .company-contact-list {
+        min-height: 180px;
+        padding-top: 8px;
+        padding-right: 22px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        text-align: left;
+        .left {
+            width: 100%;
+            li {
+                padding: 3px 0;
+                span {
+                    font-size: 14px;
+                    line-height: 28px;
+                    display: inline-block;
+                    vertical-align: top;
+                    color: #333;
+                    &:nth-child(1) {
+                        width: 60px;
+                        text-align: right;
+                        color: #999;
+                    }
+                    &:nth-child(2) {
+                        width: 175px;
+                        word-wrap: break-word;
+                        word-break: break-all;
+                        color: #333;
+                        a {
+                            color: #333;
+                            &:hover {
+                                color: #5a76cd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.company-header {
+    font-size: 16px;
+    position: relative;
+    padding: 14px 20px;
+    text-align: left;
+    color: #333;
+    border-bottom: 1px solid #e4e9ea;
+    label {
+        font-size: 12px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: inline-block;
+        padding: 5px 12px;
+        color: #fff;
+        border-radius: 4px;
+        background: #84a4e8;
+    }
+}
