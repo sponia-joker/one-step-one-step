@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Select from 'common/components/Select'
-import { getFilters } from 'actions/filter'
+import { getFilters } from 'common/actions/filter'
 import './Filter.scss'
 
 class Filter extends Component {

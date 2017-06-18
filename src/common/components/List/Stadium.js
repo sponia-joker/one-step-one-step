@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 // import company_default_logo from 'assets/img-default-company@2x.png'
-import Image from 'components/Image'
+import Image from 'common/components/Image'
 import stadium_default_logo from 'assets/img-default-stadium@2x.png'
 import { removeMunicipality, singleLineString } from 'tools'
 

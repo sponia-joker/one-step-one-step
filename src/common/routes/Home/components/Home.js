@@ -207,7 +207,7 @@ class Home extends Component {
                   <div className='home-category-example'>
                     <div className='example-title'>
                       {`${industry.name}相关创业公司`}
-                      <span> <Link to={`/companies?selectId=${industry.id}`}>更多公司</Link></span>
+                      <span> <Link to={`/companies?select_id=${industry.id}`}>更多公司</Link></span>
                     </div>
                     <div className='example-content'>
                       {

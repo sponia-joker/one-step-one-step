@@ -2,7 +2,7 @@ import compression from 'compression'
 import express from 'express'
 import projectConfig from '../../project.config'
 import renderApp from './renderApp'
-import { getCompany, fetchCounter } from './controller'
+import { getCompany, getCompanies } from './controller'
 
 const debug = require('debug')('app:src:server')
 debug('start server render')
@@ -17,13 +17,29 @@ app.get('/', (req, res) => {
     res.send(renderApp('/'))
 })
 
+app.get('/companies', (req, res) => {
+    getCompanies().then(response => {
+        const { data, headers } = response
+        res.send(renderApp(`/companies`, {
+            companies: {
+                companiesList: data,
+                total: parseInt(headers['x-total']),
+                getCompaniesOver: true,
+            }
+        }))
+    }).then(error => {
+        console.log(error)
+    })
+})
+
+
 app.get('/company/:company_id', (req, res) => {
     const { company_id } = req.params
     getCompany(company_id).then(response => {
-        res.send(renderApp(`/company/${company_id}`,{
-            company:{data:response}
+        res.send(renderApp(`/company/${company_id}`, {
+            company: { data: response }
         }))
-    }).then(error=>{
+    }).then(error => {
         console.log(error)
     })
 })
