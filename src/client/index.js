@@ -10,14 +10,15 @@ import App from '../common/App'
 
 const store = initStore(window.__PRELOADED_STATE__)
 
-const wrapApp = (App, reduxStore) =>
+const wrapApp = (App, reduxStore) =>(
     <Provider store={reduxStore}>
       <BrowserRouter>
           <AppContainer>
             <App/>
           </AppContainer>
       </BrowserRouter>
-  </Provider>
+    </Provider>
+  )
 
 
 ReactDOM.render(

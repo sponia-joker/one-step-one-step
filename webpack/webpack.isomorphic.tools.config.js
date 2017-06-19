@@ -1,4 +1,4 @@
-const Webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin') 
+const webpack_isomorphic_tools_plugin = require('webpack-isomorphic-tools/plugin')
 
 module.exports = {
     assets: {
@@ -21,7 +21,7 @@ module.exports = {
                     //
                     // Therefore using a non-default `filter` function here.
                     //
-                    return Webpack_isomorphic_tools_plugin.style_loader_filter(module, regular_expression, options, log)
+                    return webpack_isomorphic_tools_plugin.style_loader_filter(module, regular_expression, options, log)
                 }
 
                 // In production mode there will be no CSS text at all
@@ -34,11 +34,11 @@ module.exports = {
             // How to correctly transform kinda weird `module.name`
             // of the `module` created by Webpack "css-loader" 
             // into the correct asset path:
-            path: Webpack_isomorphic_tools_plugin.style_loader_path_extractor,
+            path: webpack_isomorphic_tools_plugin.style_loader_path_extractor,
 
             // How to extract these Webpack `module`s' javascript `source` code.
             // basically takes `module.source` and modifies `module.exports` a little.
-            parser: Webpack_isomorphic_tools_plugin.css_loader_parser
+            parser: webpack_isomorphic_tools_plugin.css_loader_parser
         }
     }
 }

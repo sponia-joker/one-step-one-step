@@ -21,6 +21,7 @@ export const Products = ({ title, data }) => (
                     height={60}
                     width={60}
                     radius={6}
+                    link='javascript:;'
                     url={product.images && product.images[0]
                         ? product.images[0] : getProductDefaultImage(product.product_type)} />
                 </div>

@@ -32,9 +32,6 @@ class Company extends Component {
      const {match} = this.props 
       console.log(match)
     if (!this.props.company) {
-
-      
-      
       const { params:{ company_id } } = match
       this.props.getCompany(company_id)
       }
