@@ -1,0 +1,36 @@
+.stadium-wrap {
+    text-align: center;
+    background-color: #F2F3F6;
+}
+
+.stadium {
+    width: 1180px;
+    display: inline-block;
+    height: auto;
+    .stadium-left {
+        display: inline-block;
+        vertical-align: top;
+        width: 880px;
+        height: auto;
+    }
+    .stadium-right {
+        display: inline-block;
+        vertical-align: top;
+        width: 280px;
+        margin-left: 20px;
+        height: auto;
+    }
+}
+
+.stadium-profile-wrap {
+    text-align: left;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 187, 0.20);
+}
+.stadium-companies-wrap{
+    margin-top: 20px;
+}
+.stadium-images-wrap{
+    margin: 20px 0 40px;
+
+}

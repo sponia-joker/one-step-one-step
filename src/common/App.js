@@ -7,6 +7,8 @@ const appName = projectConfig.appName
 import {Home} from './routes/Home'
 import {Company} from './routes/Company'
 import {Companies} from './routes/Companies'
+import {Stadiums} from './routes/Stadiums'
+import {Stadium} from './routes/Stadium'
 import './styles/core.scss'
 
 class App extends Component {
@@ -17,7 +19,9 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/companies" component={Companies} />
+              <Route path="/stadiums" component={Stadiums} />
               <Route path="/company/:company_id" component={Company} />
+              <Route path="/stadium/:stadium_id" component={Stadium} />
             </Switch>
         </div>
         )

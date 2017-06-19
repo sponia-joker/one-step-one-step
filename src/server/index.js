@@ -2,7 +2,7 @@ import compression from 'compression'
 import express from 'express'
 import projectConfig from '../../project.config'
 import renderApp from './renderApp'
-import { getCompany, getCompanies } from './controller'
+import { getCompany, getCompanies, getStadiums,getStadium } from './controller'
 
 const debug = require('debug')('app:src:server')
 debug('start server render')
@@ -31,6 +31,20 @@ app.get('/companies', (req, res) => {
         console.log(error)
     })
 })
+app.get('/stadiums', (req, res) => {
+    getCompanies().then(response => {
+        const { data, headers } = response
+        res.send(renderApp(`/stadiums`, {
+            stadiums: {
+                stadiumsList: data,
+                total: parseInt(headers['x-total']),
+                getStadiumsOver: true,
+            }
+        }))
+    }).then(error => {
+        console.log(error)
+    })
+})
 
 
 app.get('/company/:company_id', (req, res) => {
@@ -38,6 +52,16 @@ app.get('/company/:company_id', (req, res) => {
     getCompany(company_id).then(response => {
         res.send(renderApp(`/company/${company_id}`, {
             company: { data: response }
+        }))
+    }).then(error => {
+        console.log(error)
+    })
+})
+app.get('/stadium/:stadium_id', (req, res) => {
+    const { stadium_id } = req.params
+    getStadium(stadium_id).then(response => {
+        res.send(renderApp(`/stadium/${stadium_id}`, {
+            stadium: { data: response }
         }))
     }).then(error => {
         console.log(error)
