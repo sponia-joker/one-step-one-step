@@ -41,3 +41,13 @@ export const getStadiums = () => (
         })
     })
 )
+export const getInvestments = () => (
+    new Promise((resolve, reject) => {
+        api.get(`https://api.faxports.com/api/v1/investments`).then(response => {
+            const { data, headers } = response
+            resolve({ data, headers })
+        }).catch(error => {
+            reject(error)
+        })
+    })
+)

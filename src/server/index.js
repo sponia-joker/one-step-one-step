@@ -2,7 +2,7 @@ import compression from 'compression'
 import express from 'express'
 import projectConfig from '../../project.config'
 import renderApp from './renderApp'
-import { getCompany, getCompanies, getStadiums,getStadium } from './controller'
+import { getCompany, getCompanies, getStadiums,getStadium,getInvestments } from './controller'
 
 const debug = require('debug')('app:src:server')
 debug('start server render')
@@ -12,6 +12,7 @@ const app = express()
 app.use(compression())
 
 app.use(express.static(projectConfig.public))
+app.use(express.static(projectConfig.dist))
 
 app.get('/', (req, res) => {
     res.send(renderApp('/'))
@@ -39,6 +40,20 @@ app.get('/stadiums', (req, res) => {
                 stadiumsList: data,
                 total: parseInt(headers['x-total']),
                 getStadiumsOver: true,
+            }
+        }))
+    }).then(error => {
+        console.log(error)
+    })
+})
+app.get('/investments', (req, res) => {
+    getInvestments().then(response => {
+        const { data, headers } = response
+        res.send(renderApp(`/investments`, {
+            investments: {
+                investmentsList: data,
+                total: parseInt(headers['x-total']),
+                getInvestmentsOver: true,
             }
         }))
     }).then(error => {
