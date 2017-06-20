@@ -2,10 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const projectConfig = require('../project.config')
-var webpackIsomorphicToolsPlugin 
-= require('webpack-isomorphic-tools/plugin')
-var webpackIsomorphicToolsPlugin 
-= new webpackIsomorphicToolsPlugin(require('./webpack.isomorphic.tools.config')).development()
+// var webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
+// var webpackIsomorphicToolsPlugin = new webpackIsomorphicToolsPlugin(require('./webpack.isomorphic.tools.config')).development()
 const extractSass = new ExtractTextPlugin({
     filename: "style.css",
     disable: process.env.NODE_ENV === "development"
@@ -20,7 +18,7 @@ module.exports = {
     output: {
         path: projectConfig.dist,
         filename: '[name][hash].js',
-        publicPath: `http://localhost:${projectConfig.wdsPort}/dist/`,
+        publicPath: `http://localhost:${projectConfig.wdsPort}/`,
     },
     module: {
         rules: [{
@@ -49,7 +47,7 @@ module.exports = {
                 fallback: "style-loader"
             })
         }, {
-            test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+            test: /\.(png|jpg)$/,
             use: 'url-loader?limit=10240',
             exclude: /node_modules/
         }]
@@ -64,6 +62,9 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
+            "process.env": {
+                BROWSER: JSON.stringify(true)
+            },
             __CLIENT__: true,
             __SERVER__: false,
             __DEVELOPMENT__: true,
@@ -73,6 +74,6 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         extractSass,
-        webpackIsomorphicToolsPlugin,
+        // webpackIsomorphicToolsPlugin,
     ],
 }

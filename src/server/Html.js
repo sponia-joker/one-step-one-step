@@ -7,9 +7,9 @@ import PropTypes from 'prop-types'
 class Html extends Component {
 
     static propTypes = {
-            assets: PropTypes.object,
-            component: PropTypes.object,
-            store: PropTypes.object
+            // assets: PropTypes.object,
+            // component: PropTypes.object,
+            // store: PropTypes.object
     }
         // a sidenote for "advanced" users:
         // (you may skip this)
@@ -45,16 +45,7 @@ class Html extends Component {
                 <meta charSet="utf-8"/>
                 <title>快体育</title>
 
-                {/* favicon */}
-                {/*<link rel="shortcut icon" href={icon} />*/}
-
-                {/* styles (will be present only in production with webpack extract text plugin) */}
-                {Object.keys(assets.styles).map((style, i) =>
-                  <link href={assets.styles[style]} key={i} media="screen, projection"
-                        rel="stylesheet" type="text/css"/>)}
-
-                {/* resolves the initial style flash (flicker) on page load in development mode */}
-                {/*{ Object.keys(assets.styles).is_empty() ? <style dangerouslySetInnerHTML={{__html: require('../assets/styles/main_style.css')}}/> : null }*/}
+                <link href='/style.css' media="screen, projection" rel="stylesheet" type="text/css"/>
               </head>
               <body>
                 {/* image requiring demonstration */}
@@ -65,13 +56,8 @@ class Html extends Component {
 
                 {/* Flux store data will be reloaded into the store on the client */}
                 <script dangerouslySetInnerHTML={{__html: `window.__PRELOADED_STATE__=${serialize(store.getState())};`}} />
-
-                {/* javascripts */}
-                {/* (usually one for each "entry" in webpack configuration) */}
-                {/* (for more informations on "entries" see https://github.com/petehunt/webpack-howto/) */}
-                {Object.keys(assets.javascript).map((script, i) =>
-                  <script src={assets.javascript[script]} key={i}/>
-                )}
+                <script src='/vendor.js'/>
+                <script src='/main.js'/>
               </body>
             </html>
             )

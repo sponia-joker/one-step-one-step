@@ -11,8 +11,9 @@ debug('start server render')
 const app = express()
 app.use(compression())
 
-app.use(express.static(projectConfig.public))
 app.use(express.static(projectConfig.dist))
+app.use(express.static(projectConfig.public))
+
 
 app.get('/', (req, res) => {
     res.send(renderApp('/'))
@@ -92,7 +93,4 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!')
 })
 
-app.listen(projectConfig.webPort, () => {
-    debug(`Server running on port ${projectConfig.webPort} ${projectConfig.isProd ? '(production)' :
-    '(development)'}.`)
-})
+module.exports = app

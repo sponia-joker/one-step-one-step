@@ -16,8 +16,8 @@ module.exports = {
     },
     output: {
         path: projectConfig.dist,
-        filename: '[name][hash].js',
-        publicPath: '/dist/',
+        filename: '[name].js',
+        publicPath: '/',
     },
     module: {
         rules: [{
@@ -46,7 +46,7 @@ module.exports = {
                 fallback: "style-loader"
             })
         }, {
-            test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+            test: /\.(png|jpg)$/,
             use: 'url-loader?limit=10240',
             exclude: /node_modules/
         }]

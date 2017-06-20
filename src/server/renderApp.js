@@ -10,11 +10,11 @@ import App from '../common/App'
 
 const renderFullPage = (appComponent, store) => {
 
-    if (__DEVELOPMENT__) {
-        webpack_isomorphic_tools.refresh()
-    }
+    // if (__DEVELOPMENT__) {
+    //     webpack_isomorphic_tools.refresh()
+    // }
     return ('<!doctype html>\n' +
-        ReactDOMServer.renderToString(<Html assets={webpack_isomorphic_tools.assets()} component={appComponent} store={store}/>))
+        ReactDOMServer.renderToString(<Html component={appComponent} store={store}/>))
 }
 
 const renderApp = (location, plainPartialState, routerContext = {}) => {
