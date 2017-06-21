@@ -66,7 +66,7 @@ export const Profile = ({ company }) => {
             <li>
               <span>
                 {
-                  singleLineString`
+                  company.location&&singleLineString`
                   ${company.location.country ? company.location.country : ''}
                   ${company.location.province ? `-${company.location.province}` : ''}
                   ${company.location.city ? `-${company.location.city}` : ''}

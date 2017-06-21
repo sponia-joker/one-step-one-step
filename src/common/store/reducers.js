@@ -5,6 +5,7 @@ import companiesReducer from 'common/routes/Companies'
 import stadiumsReducer from 'common/routes/Stadiums'
 import stadiumReducer from 'common/routes/Stadium'
 import investmentsReducer from 'common/routes/Investments'
+import peopleReducer from 'common/routes/People'
 import { filterReducer, commonSearchReducer } from './common'
 const appReducer = combineReducers({
     home: homeReducer,
@@ -15,6 +16,7 @@ const appReducer = combineReducers({
     stadiums:stadiumsReducer,
     stadium:stadiumReducer,
     investments:investmentsReducer,
+    people:peopleReducer,
 });
 
 export default appReducer

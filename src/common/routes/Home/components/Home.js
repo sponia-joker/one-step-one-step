@@ -141,7 +141,7 @@ class Home extends Component {
                 </li>
                 <li>
                   <Link
-                    to={`/investments?selectId=${this.state.active === 'foreign' ? '20000000' : '10000000'}`}>
+                    to={`/investments?select_id=${this.state.active === 'foreign' ? '20000000' : '10000000'}`}>
                   更多融资</Link>
                 </li>
               </ul>

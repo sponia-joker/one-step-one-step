@@ -21,7 +21,7 @@ class Image extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loadFail: false
+            loadFail: true
         }
     }
 
@@ -39,11 +39,11 @@ class Image extends Component {
 
     componentDidMount() {
         const { url } = this.props
-        this.setImageState(url)
+            this.setImageState(url)
     }
     componentWillReceiveProps(nextProps) {
         const { url } = nextProps
-        this.setImageState(url)
+            this.setImageState(url)
     }
     setImageState = (url) => {
         const that = this
@@ -51,7 +51,8 @@ class Image extends Component {
             this.getImgMeta(url).then(response => {
                 that.setState({
                     width: response.width,
-                    height: response.height
+                    height: response.height,
+                    loadFail:false,
                 })
             }).catch(error => {
                 that.setState({ loadFail: true })

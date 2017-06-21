@@ -2,22 +2,23 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const projectConfig = require('../project.config')
-// var webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
-// var webpackIsomorphicToolsPlugin = new webpackIsomorphicToolsPlugin(require('./webpack.isomorphic.tools.config')).development()
 const extractSass = new ExtractTextPlugin({
     filename: "style.css",
     disable: process.env.NODE_ENV === "development"
 })
 module.exports = {
     context: projectConfig.base,
-    entry: [
-        "react-hot-loader/patch",
-        `webpack-hot-middleware/client?path=http://localhost:${projectConfig.wdsPort}/__webpack_hmr`,
-        './src/client'
-    ],
+    entry: {
+        main: [
+            "react-hot-loader/patch",
+            `webpack-hot-middleware/client?path=http://localhost:${projectConfig.wdsPort}/__webpack_hmr`,
+            './src/client'
+        ],
+        vendor: ['react']
+    },
     output: {
         path: projectConfig.dist,
-        filename: '[name][hash].js',
+        filename: '[name].js',
         publicPath: `http://localhost:${projectConfig.wdsPort}/`,
     },
     module: {
@@ -63,17 +64,20 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                BROWSER: JSON.stringify(true)
+                NODE_ENV: JSON.stringify("production")
             },
             __CLIENT__: true,
             __SERVER__: false,
             __DEVELOPMENT__: true,
             __DEVTOOLS__: true // <-------- DISABLE redux-devtools HERE
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendor",
+            filename: "vendor.js",
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         extractSass,
-        // webpackIsomorphicToolsPlugin,
     ],
 }

@@ -44,20 +44,15 @@ class Html extends Component {
               <head>
                 <meta charSet="utf-8"/>
                 <title>快体育</title>
-
-                <link href='/style.css' media="screen, projection" rel="stylesheet" type="text/css"/>
               </head>
               <body>
-                {/* image requiring demonstration */}
-                {/*<img src={picture}/>*/}
-
-                {/* rendered React page */}
                 <div id="root" dangerouslySetInnerHTML={{__html: ReactDOMServer.renderToString(component)}}/>
-
-                {/* Flux store data will be reloaded into the store on the client */}
-                <script dangerouslySetInnerHTML={{__html: `window.__PRELOADED_STATE__=${serialize(store.getState())};`}} />
-                <script src='/vendor.js'/>
-                <script src='/main.js'/>
+                {
+                  !__DEVELOPMENT__&&<link href='/style.css' media="screen, projection" rel="stylesheet" type="text/css"/>
+                }
+                <script dangerouslySetInnerHTML={{__html: `window.__PRELOADED_STATE__=${serialize(store.getState())}`}} />
+                {__DEVELOPMENT__?<script src='http://localhost:3001/vendor.js'/>:<script src='/vendor.js'/>}
+                {__DEVELOPMENT__?<script src='http://localhost:3001/main.js'/>:<script src='/main.js'/>}
               </body>
             </html>
             )

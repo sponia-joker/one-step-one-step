@@ -10,6 +10,11 @@ import {Stadium} from './routes/Stadium'
 import {Companies} from './routes/Companies'
 import {Stadiums} from './routes/Stadiums'
 import {Investments} from './routes/Investments'
+import {People} from './routes/People'
+import {NotFound} from './routes/404'
+import {Contact} from './routes/Contact'
+import {About} from './routes/About'
+import {Find} from './routes/Find'
 
 import './styles/core.scss'
 
@@ -25,6 +30,11 @@ class App extends Component {
               <Route path="/investments" component={Investments} />
               <Route path="/company/:company_id" component={Company} />
               <Route path="/stadium/:stadium_id" component={Stadium} />
+              <Route path="/people/:people_id" component={People} />
+              <Route path="/search" component={Find} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/about" component={About} />
+              <Route path="*" component={NotFound} />
             </Switch>
         </div>
         )

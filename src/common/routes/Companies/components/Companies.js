@@ -10,6 +10,7 @@ import Footer from 'common/components/Footer'
 import { getCompanies } from '../modules/companies'
 import List from 'common/components/List'
 import logo_balck from 'assets/logo-black@2x.png'
+import queryString from 'query-string'
 
 class Companies extends Component {
 
@@ -57,7 +58,8 @@ class Companies extends Component {
   render () {
     const title = ['公司', '地区', '子行业', '成立时间', '轮次']
     const { companiesList, total, getCompaniesOver, match} = this.props
-    const {select_id} = match.params
+    const {location:{ search }} = this.props
+    const query = queryString.parse(search)
     return (
       <div className='companies-container'>
         <Helmet title='创业公司 | 快体育' />
@@ -67,7 +69,7 @@ class Companies extends Component {
             <Filter handleSubmit={this.handleSubmit}
               yearsVisible={false}
               typesVisible={false}
-              companySelectId={select_id}
+              companySelectId={query.select_id}
               citysVisible={false} />
             <List data={companiesList} total={total}
               title={title} type='Company' over={getCompaniesOver} />

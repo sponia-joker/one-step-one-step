@@ -1,0 +1,56 @@
+.not-found-container {
+    height: auto;
+    text-align: center;
+    background-color: #f2f3f6;
+}
+
+.not-found-content {
+    display: inline-block;
+    width: 1180px;
+    height: 660px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    background: #fff;
+    background-image: url('~assets/icon-about-us@2x.png');
+    background-repeat: no-repeat;
+    background-position: center 47px;
+    background-size: 512px 263px;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+}
+
+.word-not-found-us {
+    position: relative;
+    display: inline-block;
+    margin-top: 324px;
+    .not-found {
+        font-size: 36px;
+        position: absolute;
+        top: 40px;
+        left: 120px;
+        letter-spacing: -3px;
+        color: #333;
+    }
+    .back-to-index {
+        margin: 50px auto;
+        font-size: 14px;
+        display: block;
+        width: 150px;
+        height: 44px;
+        color: #fff;
+        background: #5a76cd;
+        line-height: 44px;
+    }
+}
+
+.not-found-description {
+    font-size: 14px;
+    line-height: 20px;
+    width: 455px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 36px;
+    text-align: center;
+    text-indent: 2em;
+    letter-spacing: 1px;
+    color: #999;
+}

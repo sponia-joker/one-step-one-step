@@ -18,9 +18,10 @@ class Search extends Component {
   }
 
   submitForm =() => {
-    const { location, router } = this.props
-    if (location.pathname !== '/search') {
-      router.replace(`/search?type=company${this.state.value ? `&q=${this.state.value}` : ''}`)
+    const { location, history } = this.props
+    const {value} = this.state
+    if (location.pathname !== '/search' && value) {
+      history.replace(`/search?q=${this.state.value}`)
     }
   }
   onKeyUp = (event) => {

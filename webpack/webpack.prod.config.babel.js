@@ -6,7 +6,7 @@ var webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 var webpackIsomorphicToolsPlugin = new webpackIsomorphicToolsPlugin(require('./webpack.isomorphic.tools.config'))
 const extractSass = new ExtractTextPlugin({
     filename: "style.css",
-    disable:false,
+    disable: false,
 })
 module.exports = {
     context: projectConfig.base,
@@ -30,7 +30,10 @@ module.exports = {
             test: /\.(css|scss)$/,
             use: extractSass.extract({
                 use: [{
-                    loader: "css-loader"
+                    loader: "css-loader",
+                    options: {
+                        minimize: true
+                    }
                 }, {
                     loader: 'postcss-loader',
                     options: {
@@ -61,10 +64,11 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
             __CLIENT__: true,
             __SERVER__: false,
             __DEVELOPMENT__: false,
-            __DEVTOOLS__: true // <-------- DISABLE redux-devtools HERE
+            __DEVTOOLS__: false,
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
@@ -73,6 +77,9 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
+            },
+            output: {
+                comments: false
             },
             sourceMap: false
         }),

@@ -1,0 +1,53 @@
+.contact-container {
+    height: auto;
+    text-align: center;
+    background-color: #f2f3f6;
+}
+
+.contact-content {
+    display: inline-block;
+    width: 1180px;
+    height: 660px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    background: #fff;
+    background-image: url('~assets/icon-contact@2x.png');
+    background-repeat: no-repeat;
+    background-position: center 47px;
+    background-size: 512px 263px;
+    box-shadow: 0 2px 4px 0 rgba(102, 123, 186, .20);
+}
+
+.word-contact-us {
+    position: relative;
+    display: inline-block;
+    margin-top: 324px;
+    .contact {
+        font-size: 36px;
+        position: absolute;
+        top: 40px;
+        left: 170px;
+        letter-spacing: -3px;
+        color: #333;
+    }
+}
+
+.contact-list {
+    font-size: 14px;
+    width: 455px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 40px;
+    color: #999;
+    .bussiess {
+        p {
+            margin: 2px;
+        }
+    }
+    .advise {
+        margin-top: 30px;
+        p {
+            margin: 2px;
+        }
+    }
+}

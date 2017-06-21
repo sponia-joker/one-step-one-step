@@ -23,7 +23,6 @@ export class Stadium extends Component {
     stadium:PropTypes.object
   }
   componentDidMount () {
-    console.log(this.props.match)
     const { params:{ stadium_id } } = this.props.match
     this.props.getStadium(stadium_id)
   }

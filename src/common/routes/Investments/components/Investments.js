@@ -10,6 +10,7 @@ import Footer from 'common/components/Footer'
 import { getInvestments } from '../modules/investments'
 import List from 'common/components/List'
 import logo_balck from 'assets/logo-black@2x.png'
+import queryString from 'query-string'
 
 class Investments extends Component {
 
@@ -57,7 +58,8 @@ class Investments extends Component {
   render () {
     const title = ['公司', '轮次', '融资金额', '投资者', '时间']
     const { investmentsList, total, getInvestmentsOver, match } = this.props
-    const {select_id} = match.params
+    const {location:{ search }} = this.props
+    const query = queryString.parse(search)
     return (
       <div className='investments-container'>
         <Helmet title={`融资数据 | 快体育`} />
@@ -66,7 +68,7 @@ class Investments extends Component {
           <div className='investments-list'>
             <Filter handleSubmit={this.handleSubmit}
               tagsVisible={false}
-              investmentSelectId={select_id}
+              investmentSelectId={query.select_id}
               typesVisible={false}
               citysVisible={false} />
             <List data={investmentsList} total={total}
